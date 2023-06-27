@@ -174,7 +174,7 @@
 .inputGroup :is(input:focus, input:valid) {
   border-color: var(--color-secondary);
 }
-/* .close {
+.close {
   color: black;
   float: right;
   font-size: 35px;
@@ -184,6 +184,7 @@
   top: 0;
   right: 1rem;
 }
+/*
 .modal-hold {
   position: absolute;
   top: 0;

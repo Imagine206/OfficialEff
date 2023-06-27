@@ -14,13 +14,13 @@
 
 const homeImg = document.getElementById('homeImg');
 const images = [
-        "/images/79d69d_5653c78281ad49ed93fd4dbfa07d8d2c~mv2.webp",  
-        "/images/effImgs.webp",
-        "/images/fahmi1eff.webp",
-        "/images/fahmi2eff.webp",
-        "/images/ahmedeff.webp",
-        "/images/Screenshot 2023-06-25 221850.png",
-        "/images/Screenshot 2023-06-25 221952.png"
+        "images/79d69d_5653c78281ad49ed93fd4dbfa07d8d2c~mv2.webp",  
+        "images/effImgs.webp",
+        "images/fahmi1eff.webp",
+        "images/fahmi2eff.webp",
+        "images/ahmedeff.webp",
+        "images/Screenshot 2023-06-25 221850.png",
+        "images/Screenshot 2023-06-25 221952.png"
     ];
 let currentIndex = 0;
 const switchImage = () => {

@@ -36,3 +36,34 @@ const switchImage = () => {
 }
 
 setInterval(switchImage, 3000);
+
+
+
+// Donate Modal 
+// Get the modal element
+const modal = document.getElementById("donateModal");
+
+// Get the button that opens the modal
+const btn = document.getElementById("donateBtn");
+
+// Get the <span> element that closes the modal
+const span = document.getElementsByClassName("close")[0];
+
+// Function to open the modal
+const openModal = () => {
+  modal.style.display = "block";
+};
+
+// Function to close the modal
+const closeModal = () => {
+  modal.style.display = "none";
+};
+
+// Event listeners
+btn.addEventListener("click", openModal);
+span.addEventListener("click", closeModal);
+window.addEventListener("click", event => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});

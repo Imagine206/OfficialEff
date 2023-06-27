@@ -393,9 +393,40 @@
 <!-----------------------Donation Modal ---------------------->
     <div id="donateModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Make a Donation</h2>
-            <p>Thank you for supporting our cause! But our donation system is down.</p>
+            <!-- <div class="modal-hold">
+                <span class="hold-message"><p>Thank you for supporting our cause! But our donation system is down.</p></span> 
+            </div> -->
+            <span class="close">&times;</span> 
+            <h1>Donating to E&F</h1>
+            <form action="">
+                <div class="donation-amount">
+                    <p>Select donation amount</p>
+                    <button class="amount">$50</button>
+                    <button class="amount">$150</button>
+                    <button class="amount">$250</button>
+                    <button class="amount">$1000</button>
+                    
+                </div>
+                <div class="inputGroup">
+                    <input type="text" autocomplete="off">
+                    <label for="name">Enter amount</label>
+                </div>
+                <div class="payment-method">
+                    <p>Payment Method</p>
+                    <select name="" id="">
+                        <option value="card">Card</option>
+                    </select>
+                </div>
+                <div class="next-btn-container">
+                    <button class="button">
+                        <span class="button_lg">
+                            <span class="button_sl"></span>
+                            <span class="button_text">Next</span>
+                        </span>
+                    </button>
+                </div>
+            </form>
+            
         </div>
     </div>
     <script src="script.js"></script>

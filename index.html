@@ -362,7 +362,7 @@
                 
                 <div class="schedule-wrapper">
                     <div class="view-btn">
-                        <button id="viewSchedule">
+                        <button value="youthschedule" class="viewSchedule">
                             Click to View
                         </button>
                     </div>
@@ -370,18 +370,20 @@
                 </div>
                 <div class="schedule-wrapper">
                     <div class="view-btn">
-                        <button id="viewSchedule">
+                        <button value="adultschedule" class="viewSchedule">
                             Click to View
                         </button>
                     </div>
                     <iframe src="https://scheduler.leaguelobster.com/1350443/adult-league/summer-2023/" class="styled-iframe"></iframe>
                 </div>
            </div>
-           <div class="show-full-schedule">
-                <div class="schedule-modal">
-                    <iframe src="" frameborder="0"></iframe>
-                </div>
-           </div>
+           <div class="show-full-schedule active-schedule">
+                <button id="closeScheduleModal"><i class="fa-regular fa-rectangle-xmark"></i></button>
+                    <div class="schedule-modal">
+                        
+                        <iframe id="frame" src="" frameborder="0"></iframe>
+                    </div>
+            </div>
         </section>
     </main>
 

@@ -88,12 +88,27 @@ window.addEventListener("click", event => {
 
 
 // Schedule Modal for full screen view
-const viewScheduleBtn = document.getElementById('viewSchedule');
+const viewScheduleBtn = document.querySelectorAll('.viewSchedule');
 const showFullSchedule = document.querySelector('.show-full-schedule');
+const closeScheduleBtn = document.getElementById('closeScheduleModal');
+
+viewScheduleBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        showFullSchedule.style.display = 'block'
+        
+        const selectedView = e.target.value
+        let iframe = document.getElementById('frame');
+
+        if (selectedView === 'youthschedule'){
+            iframe.setAttribute('src', 'https://scheduler.leaguelobster.com/1350932/youth-league/summer-2023/');
+        }else if (selectedView === 'adultschedule'){
+            iframe.setAttribute('src', 'https://scheduler.leaguelobster.com/1350443/adult-league/summer-2023/');
+        }
 
 
-viewScheduleBtn.addEventListener('click', () => {
-    showFullSchedule.classList.add('.active-schedule')
+    })
+})
 
-    console.log('clicked')
+closeScheduleBtn.addEventListener('click', () => {
+    showFullSchedule.style.display = 'none';
 })

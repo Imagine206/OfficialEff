@@ -1049,8 +1049,14 @@ button#donateBtn:hover {
   left: 0;
   bottom: 0;
   z-index: 100;
+  display: none;
 }
 
+.schedule-modal{
+  background-color: white;
+  height: 100vh;
+  margin: 5rem;
+}
 
 .schedule-wrapper {
   position: relative;
@@ -1085,7 +1091,28 @@ button#donateBtn:hover {
   color: var(--color-grey0);
   background-color: var(--color-secondary);
 }
+.schedule-modal iframe {
+  width: 100%;
+  height: 100%;
+}
 
+#closeScheduleModal{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 1rem;
+  padding: .5rem 5rem;
+  font-size: 28px;
+  border: none;
+  border-radius: 10px;
+  background-color: red;
+  color: var(--color-grey-0);
+}
+
+.show-full-schedule #closeScheduleModal {
+  cursor: pointer;
+}
 
   @media screen and (max-width: 600px) {
     header {
@@ -1238,12 +1265,21 @@ button#donateBtn:hover {
       font-size: 28px;
     }
     .schedule  .main-title h2,
-    .schedule .main-title span
-  {
+    .schedule .main-title span{
       font-size: 2rem
     }
     .schedule .main-title .bg-text{
       font-size: 2.3rem;
+    }
+    #closeScheduleModal {
+      top: 0;
+    }
+    .show-full-schedule .schedule-modal{
+      margin-top: 7rem;
+    }
+
+    .schedule-content .schedule-wrapper .viewSchedule{
+      font-size: 14px;
     }
   }
   @media screen and (max-width: 1432px) {
@@ -1274,6 +1310,16 @@ button#donateBtn:hover {
   
     .main-title h2 .bg-text {
       font-size: 5.5rem;
+    }
+    .schedule-modal{
+      margin: 3rem 1rem 0 1rem;
+      min-height: 100vh;
+    }
+    #closeScheduleModal{
+      width: 100%;
+      margin-top: 2rem;
+      padding-left: .5rem;
+      padding-right: .5rem;
     }
   }
   @media screen and (max-width: 1250px) {

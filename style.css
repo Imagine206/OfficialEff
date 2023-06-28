@@ -1114,6 +1114,26 @@ button#donateBtn:hover {
   cursor: pointer;
 }
 
+
+
+.wuksD5{
+ position: absolute;
+  background: transparent;
+    height: 80vh;
+    width: 70%;
+    overflow-y: hidden;
+}
+
+
+@media screen and (max-width: 600px) {
+  .wuksD5{
+    width: 79%;
+  }
+  .stats{
+    display: flex;
+  }
+}
+
   @media screen and (max-width: 600px) {
     header {
       padding: 0 !important;

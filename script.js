@@ -1,4 +1,17 @@
-(function () {
+// (function () {
+//     [...document.querySelectorAll(".control")].forEach(button => {
+//         button.addEventListener("click", function() {
+//             document.querySelector(".active-btn").classList.remove("active-btn");
+//             this.classList.add("active-btn");
+//             document.querySelector(".active").classList.remove("active");
+//             document.getElementById(button.dataset.id).classList.add("active");
+//         })
+//     });
+//     document.querySelector(".theme-btn").addEventListener("click", () => {
+//         document.body.classList.toggle("light-mode");
+//     })
+// })();
+function initialize() {
     [...document.querySelectorAll(".control")].forEach(button => {
         button.addEventListener("click", function() {
             document.querySelector(".active-btn").classList.remove("active-btn");
@@ -9,8 +22,13 @@
     });
     document.querySelector(".theme-btn").addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
-    })
-})();
+    });
+}
+
+// Call the initialize function when you want to invoke the code
+initialize();
+
+
 
 const homeImg = document.getElementById('homeImg');
 const images = [
@@ -67,3 +85,15 @@ window.addEventListener("click", event => {
     closeModal();
   }
 });
+
+
+// Schedule Modal for full screen view
+const viewScheduleBtn = document.getElementById('viewSchedule');
+const showFullSchedule = document.querySelector('.show-full-schedule');
+
+
+viewScheduleBtn.addEventListener('click', () => {
+    showFullSchedule.classList.add('.active-schedule')
+
+    console.log('clicked')
+})

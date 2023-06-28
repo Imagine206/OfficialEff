@@ -1011,7 +1011,82 @@ button#donateBtn:hover {
   .about-container .left-about p {
     padding-left: 0;
   }
-  
+
+  .dollarSign::before{
+    content: "$";
+    position: absolute;
+    margin-left: 5px;
+    color: black;
+  }
+
+  .styled-iframe {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    scrollbar-width: 0%;
+  }
+  .schedule-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-top: 4rem;
+  }
+  .schedule-wrapper iframe{
+    height: 70vh;
+    scroll-snap-type: proximity;
+    border: none;
+  }
+
+/* ----- Schedule Modal ---- */
+.active-schedule{
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+
+.schedule-wrapper {
+  position: relative;
+}
+
+.schedule-wrapper .view-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.schedule-wrapper:hover .view-btn {
+  opacity: 1;
+}
+
+.schedule-wrapper .view-btn button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: opacity 500ms ease-in-out;
+  color: var(--color-grey0);
+  background-color: var(--color-secondary);
+}
+
+
   @media screen and (max-width: 600px) {
     header {
       padding: 0 !important;
@@ -1021,10 +1096,13 @@ button#donateBtn:hover {
       width: 50px;
       height: 50px;
     }
+    .main-btn .btn-icon{
+      padding: .5rem;
+    }
   
     .header-content {
       grid-template-columns: repeat(1, 1fr);
-      padding-bottom: 6rem;
+      padding-bottom: 1rem;
     }
   
     .left-header .h-shape {
@@ -1060,6 +1138,8 @@ button#donateBtn:hover {
     }
     .controls .control {
       margin: 1rem 0.3rem;
+      width: 40px;
+      height: 40px;
     }
   
     .about-container {
@@ -1142,12 +1222,27 @@ button#donateBtn:hover {
     }
   
     .main-title h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .main-title h2 span {
-      font-size: 2.3rem;
+      font-size: 1.8rem;
     }
     .main-title h2 .bg-text {
+      font-size: 2rem;
+    }
+    .donation-amount .amount{
+      padding: .5rem;
+      font-size: 16px;
+    }
+    .modal-content h1{
+      font-size: 28px;
+    }
+    .schedule  .main-title h2,
+    .schedule .main-title span
+  {
+      font-size: 2rem
+    }
+    .schedule .main-title .bg-text{
       font-size: 2.3rem;
     }
   }
@@ -1195,17 +1290,32 @@ button#donateBtn:hover {
       padding-right: 9rem;
     }
   }
-  @media screen and (max-width: 660px) {
-      .main-btn{
-          font-size: 16px;
-          padding: .5rem 1rem;
+  @media screen and (max-width: 760px) {
     .blogs {
       grid-template-columns: repeat(1, 1fr);
     }
-  
+    .main-btn .btn-text{
+      padding: 0 1rem;
+      font-size: 16px;
+    }
+
     .portfolios {
       grid-template-columns: repeat(1, 1fr);
     }
+    .right-header p{
+      font-size: calc(16px - 3px);
+    }
+    .contact-content-con .left-contact h4{
+      font-size: 28px;
+    }
+
+    .controls  {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    
   }
   @media screen and (max-width: 1070px) {
     .about-container {
@@ -1214,7 +1324,10 @@ button#donateBtn:hover {
     .about-container .right-about {
       padding-top: 2.5rem;
     }
-  
+  .schedule-content{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
     .main-title h2 {
       font-size: 4rem;
     }

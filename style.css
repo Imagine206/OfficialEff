@@ -6,7 +6,7 @@
   }
   
   :root {
-    --color-primary: #334155;
+    --color-primary: #1e293b;
     --color-secondary: #f97316;
     --color-white: #FFFFFF;
     --color-black: #000;
@@ -100,7 +100,7 @@
 }
 
 .modal-content {
-  background-color: var(--color-grey-1);
+  background-color: var(--color-white);
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -719,15 +719,54 @@ button#donateBtn:hover {
   
   .portfolios {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
     margin-top: 3rem;
+    width: 100%;
+    height: auto;
+  }
+  .portfolios .item1{
+    grid-row: span 3;
+    height: 100%;
+  }
+  .portfolios .portfolio-item.item1 .image img{
+    height: 900px;
+  }
+  .portfolios .item2{
+    grid-column: span 2;
+  }
+  .portfolios .item3{
+    grid-column: 4/5;
+  }
+  .portfolios .item4{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .portfolios .item5{
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  .portfolios .item6{
+    grid-column: 4/5;
+    grid-row: 2/4;
+  }
+  .portfolios .portfolio-item.item6 .image img{
+    height: 600px;
+  }
+  .portfolios .item7{
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  .portfolios .item8{
+    grid-column: 3/4;
+    grid-row: 3/4;
   }
   .portfolios .portfolio-item {
     position: relative;
     border-radius: 15px;
   }
-  .portfolios .portfolio-item img {
+  .portfolios .portfolio-item .image img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -1117,60 +1156,13 @@ button#donateBtn:hover {
 
 
 .wuksD5{
- position: absolute;
-  background: transparent;
-    height: 80vh;
+    position: absolute;
+    background: transparent;
+    height: 100vh;
     width: 70%;
     overflow-y: hidden;
-   
 }
 
-/* thank you div  */
-.thankyou-wrapper{
-  width:100%;
-  height:auto;
-  margin:auto;
-  background:#ffffff; 
-  padding:10px 0px 50px;
-  display: none;
-}
-.thankyou-wrapper h1{
-  font:100px Arial, Helvetica, sans-serif;
-  text-align:center;
-  color:#333333;
-  padding:0px 10px 10px;
-}
-.thankyou-wrapper p{
-  font:26px Arial, Helvetica, sans-serif;
-  text-align:center;
-  color:#333333;
-  padding:5px 10px 10px;
-}
-.thankyou-wrapper a{
-  font:26px Arial, Helvetica, sans-serif;
-  text-align:center;
-  color:#ffffff;
-  display:block;
-  text-decoration:none;
-  width:250px;
-  background:#E47425;
-  margin:10px auto 0px;
-  padding:15px 20px 15px;
-  border-bottom:5px solid #F96700;
-}
-.thankyou-wrapper a:hover{
-  font:26px Arial, Helvetica, sans-serif;
-  text-align:center;
-  color:#ffffff;
-  display:block;
-  text-decoration:none;
-  width:250px;
-  background:#F96700;
-  margin:10px auto 0px;
-  padding:15px 20px 15px;
-  border-bottom:5px solid #F96700;
-}
-/* end of the thank you page  */
 
 @media screen and (max-width: 600px) {
   .wuksD5{
@@ -1268,12 +1260,24 @@ button#donateBtn:hover {
       grid-template-columns: repeat(1, 1fr);
     }
   
-    .portfolios {
+    #portfolio .portfolios {
       grid-template-columns: repeat(1, 1fr);
       padding-bottom: 6rem;
       margin-top: 1rem;
+      grid-template-rows: repeat(1, 1fr);
     }
-  
+    .portfolios .item1,
+    .portfolios .item2,
+    .portfolios .item3,
+    .portfolios .item4,
+    .portfolios .item5,
+    .portfolios .item6,
+    .portfolios .item7,
+    .portfolios .item8{
+      grid-column: 1 / -1;
+      grid-row: auto;
+    }
+
     .blogs {
       grid-template-columns: repeat(1, 1fr);
       padding-bottom: 6rem;

@@ -1234,7 +1234,7 @@ button#donateBtn:hover {
 @media screen and (max-width: 600px) {
   #result {
     display: none;
-    width: 400px;
+    width: 315px;
   }
   .card {
     

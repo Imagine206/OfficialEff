@@ -151,27 +151,28 @@ Submit.addEventListener("click", (e) => {
                <p>Message: ${Message.value}</p>`
 
   if (!name.value || !email.value || !SUBJECT.value || !Message.value) {
-    errorCard.style.display = "block" 
-    setTimeout(() => {
-      errorCard.style.display = "none" 
-    }, 2000)
-    return ;
+    alert("Please fill in all fields.")
+    return
   }
 
-  thankYouCard.style.display = "block" 
-  thankYouCard.style.opacity = "1" 
+  errorCard.style.display = "none" 
+
+  thankYouCard.style.display = "block"
+  thankYouCard.style.opacity = "1"
 
   setTimeout(() => {
-    thankYouCard.style.opacity = "0" 
+    thankYouCard.style.opacity = "0"
   }, 3000)
 
   setTimeout(() => {
-    thankYouCard.style.display = "none" 
+    thankYouCard.style.display = "none"
   }, 4000)
-name.value = ''
-email.value = ' '
-SUBJECT.value = ' '
-Message.value = ''
+
+  name.value = ""
+  email.value = ""
+  SUBJECT.value = ""
+  Message.value = ""
+
   Email.send({
     SecureToken: "04a6793a-a4e5-4008-9438-0648577d58a2",
     To: "abdulkafinirig4@gmail.com",

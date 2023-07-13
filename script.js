@@ -117,35 +117,9 @@ const SUBJECT = document.querySelector(".SUBJECT")
 const Message = document.getElementById("Message")
 const Submit = document.querySelector(".submit-btn ")
 const contactForm = document.querySelector(".contact-form")[0]
-
+const thankWrapper = document.querySelector(".thankyou-wrapper")
+const thankYouCard = document.querySelector("#result")
 contactForm.addEventListener("submit", (e) => {
-  e.preventDefault()
-  let ebody = `<p>Name: ${name.value}</p>
-               <p>Email: ${email.value}</p>
-               <p>Subject: ${subject.value}</p>
-               <p>Message: ${Message.value}</p>`
-
-  if (!name.value || !email.value || !SUBJECT.value || !Message.value) {
-    alert("Please fill in all fields.")
-    return
-  }
-
-  const getUserInfo = Email.send({
-    SecureToken: "04a6793a-a4e5-4008-9438-0648577d58a2",
-    To: "abdulkafinirig4@gmail.com",
-    From: "abdulkafinirig4@gmail.com",
-    Subject: "Testing email: " + email.value,
-    Body: ebody,
-  }).then((message) => {
-    alert(message)
-  })
-
-  console.log("Submit button clicked")
-})
-
-
-
-Submit.addEventListener("click", (e) => {
   let ebody = `<p>Name: ${name.value}</p>
                <p>Email: ${email.value}</p>
                <p>Subject: ${SUBJECT.value}</p>
@@ -156,7 +130,7 @@ Submit.addEventListener("click", (e) => {
     return // Stop further execution if any field is empty
   }
 
-  const getUserInfo = Email.send({
+  Email.send({
     SecureToken: "04a6793a-a4e5-4008-9438-0648577d58a2",
     To: "abdulkafinirig4@gmail.com",
     From: "abdulkafinirig4@gmail.com",
@@ -164,11 +138,42 @@ Submit.addEventListener("click", (e) => {
     Body: ebody,
   }).then((message) => {
     alert(message)
+    thankWrapper.classList.add("block")
   })
 })
 
+Submit.addEventListener("click", (e) => {
+  e.preventDefault() // Prevent form submission
 
-const thankyouWrapper = document.querySelector(".thankyou-wrapper")
+  let ebody = `<p>Name: ${name.value}</p>
+               <p>Email: ${email.value}</p>
+               <p>Subject: ${SUBJECT.value}</p>
+               <p>Message: ${Message.value}</p>`
 
+  if (!name.value || !email.value || !SUBJECT.value || !Message.value) {
+    errorCard.style.display = "block" // Show the error card
+    setTimeout(() => {
+      errorCard.style.display = "none" // Hide the error card
+    }, 2000)
+    return // Stop further execution if any field is empty
+  }
 
+  thankYouCard.style.display = "block" // Show the thank you card
+  thankYouCard.style.opacity = "1" // Make the thank you card fully visible
 
+  setTimeout(() => {
+    thankYouCard.style.opacity = "0" // Fade out the thank you card
+  }, 3000)
+
+  setTimeout(() => {
+    thankYouCard.style.display = "none" // Remove the thank you card from the DOM
+  }, 4000)
+
+  Email.send({
+    SecureToken: "04a6793a-a4e5-4008-9438-0648577d58a2",
+    To: "abdulkafinirig4@gmail.com",
+    From: "abdulkafinirig4@gmail.com",
+    Subject: "Testing email: " + email.value,
+    Body: ebody,
+  })
+})
